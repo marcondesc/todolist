@@ -14,8 +14,6 @@ public class TodoController : Controller
         _context = context;
     }
 
-
-
     public IActionResult Index()
     {
         var todos = _context.Todos.ToList();
@@ -26,6 +24,20 @@ public class TodoController : Controller
         // outra forma de fazer - sem usar viewmodel
         //IEnumerable<Todo> objTodoList = _context.Todos;
         //return View(objTodoList);
-
     }
+
+    public IActionResult Delete(int id)
+    {
+        var todo = _context.Todos.Find(id);
+        if (todo is null)
+        {
+            return NotFound();
+        }
+        _context.Remove(todo);
+        _context.SaveChanges();
+        return RedirectToAction(nameof(Index));
+    }
+
+
+
 }
