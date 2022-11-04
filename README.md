@@ -13,4 +13,5 @@ Projeto feito para aprendizado de dotNet 6, utilizando Entity Framework Core e S
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [ ] CRUD de tarefas
+- [ ] Conteinerizar a aplicação
 - [ ] Adaptação para MySQL
