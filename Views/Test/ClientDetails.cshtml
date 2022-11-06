@@ -1,4 +1,34 @@
 @model Client
 
 <h1> Olá @Model.Name</h1>
-<p> @Model.Email</p>
+<p>@Model.Email</p>
+<p>Número de compras: @Model.Purchases</p>
+
+@if (Model.Purchases >= 100)
+{
+    <p>Cliente com 20% de desconto</p>
+}
+else if (Model.Purchases >= 50)
+{
+    <p>Cliente com 10% de desconto</p>
+}
+else
+{
+    <p>Cliente sem desconto</p>
+}
+
+@switch (Model.Type)
+{
+    case 1:
+        <p>Cliente tipo comum</p>
+        break;
+    case 2:
+        <p>Cliente tipo VIP</p>
+        break;
+    case 3:
+        <p>Cliente tipo Premium</p>
+        break;
+    default:
+        <p>Cliente tipo não definido</p>
+        break;
+}
