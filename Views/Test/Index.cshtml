@@ -1,1 +1,22 @@
+@{
+    var name = "Treinamento de NET 6";
+}
+
+
 <h1>hello world!</h1>
+<h2>@name</h2>
+<h5>@ViewData["name2"]</h5>
+
+<p>
+    @{
+        var todo = ViewData["todo"] as Todo;
+    }
+    Nome da Tarefa: @todo?.Title
+</p>
+
+<br><br>
+
+<h5>@ViewBag.Name</h5>
+<p>
+    Nome da outra Tarefa: @ViewBag.Todo.Title
+</p>
